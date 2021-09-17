@@ -1,0 +1,10 @@
+name: deploy
+on:
+  push:
+    branck: [master]
+jobs:
+  docker:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
