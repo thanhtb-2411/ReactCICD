@@ -47,10 +47,10 @@ jobs:
         run: echo ${{ steps.docker_build.outputs.digest }}
 
       - name: SSH into host and update repo
-          uses: appleboy/ssh-action@master
-          with:
-            host: ${{ secrets.SSH_HOST }}
-            username: deploy
-            key: ${{ secrets.SSH_PRIVATE_KEY }}
-            script: |
-             echo "Connect SSH SUCCESS!"
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+           echo "Connect SSH SUCCESS!"
